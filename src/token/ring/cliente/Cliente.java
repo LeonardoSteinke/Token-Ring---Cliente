@@ -89,7 +89,11 @@ public class Cliente extends javax.swing.JFrame {
                     try {
                         socket = new Socket("localhost", (PORTNUMBER + 1));
                     } catch (Exception e) {
-                        socket = new Socket("localhost", 5556);
+                        try {
+                            socket = new Socket("localhost", (PORTNUMBER + 2));
+                        } catch (Exception ex) {
+                            socket = new Socket("localhost", 5556);
+                        }
                     }
                     ObjectOutputStream saida = new ObjectOutputStream(socket.getOutputStream());
                     saida.writeUTF(TOKEN);
