@@ -14,10 +14,6 @@ import java.util.logging.Logger;
  */
 public class Cliente extends javax.swing.JFrame {
 
-    /**
-     * Creates new form NewJFrame
-     */
-    //Processo process;
     Socket socket;
     ServerSocket server;
     int processNumber;
@@ -38,7 +34,6 @@ public class Cliente extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
-        //process = new Processo();
         try {
             socket = new Socket("localhost", 5555);
             ObjectInputStream entrada = new ObjectInputStream(socket.getInputStream());
